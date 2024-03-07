@@ -1,0 +1,7 @@
+<h3>Los juego favoritos de {{username}}</h3>
+
+<ul>
+    @for(game of games; track game.id){
+        <li>{{game.name}}</li>
+    }
+</ul>

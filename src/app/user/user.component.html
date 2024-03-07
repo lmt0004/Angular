@@ -1,0 +1,33 @@
+<!-- src/app/app.component.html -->
+
+<header>
+    <h1>Pagina con Angular</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png
+    " alt="" />
+    <!-- Puedes agregar más contenido al encabezado según tus necesidades -->
+  </header>
+  
+  <section>
+    @if (isLoggedIn) {
+      <p>Bienvenido, {{username}} </p>
+      <img (click)="greet()" src="https://github.com/midudev.png" alt="midu">
+    }@else{
+      <p>Iniciar sesión</p>
+      <button (click)="isLoggedIn = true">Ver Foto</button>
+    }
+  
+    <app-games
+      (addFavoriteEvent)="getFavorite($event)"
+      [username]="username"
+    ></app-games>
+  
+    @if (favGame != '') {
+      <p>Tu juego favorito {{favGame}}</p>
+    }
+  </section>
+  
+  <footer>
+    <p>&copy; 2024 Mi Web Angular. Todos los derechos reservados.</p>
+    <!-- Puedes agregar más contenido al pie de página según tus necesidades -->
+  </footer>
+  
